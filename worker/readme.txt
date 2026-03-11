@@ -3,7 +3,7 @@ Contributors: managewp,freediver
 Tags: manage multiple sites, backup, security, migrate, performance, analytics, Manage WordPress, Managed WordPress, WordPress management, WordPress manager, WordPress management, site management, control multiple sites, WordPress management dashboard, administration, automate, automatic, comments, clone, dashboard, duplicate, google analytics, login, manage, managewp, multiple, multisite, remote, seo, spam
 Requires at least: 3.1
 Tested up to: 6.8
-Stable tag: 4.9.30
+Stable tag: 4.9.31
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/quick-guide-gplv3.html
 
@@ -55,6 +55,10 @@ Check out the [ManageWP promo video](https://vimeo.com/220647227).
 https://vimeo.com/220647227
 
 == Changelog ==
+
+= 4.9.31 =
+- Added Elementor Pro database update detection
+- Fix: Resolved WooCommerce database update not detected after plugin upgrade
 
 = 4.9.30 =
 - Performance: Optimized plugin update detection logic
