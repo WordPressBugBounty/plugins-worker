@@ -3,7 +3,7 @@ Contributors: managewp,freediver
 Tags: manage multiple sites, backup, security, migrate, performance, analytics, Manage WordPress, Managed WordPress, WordPress management, WordPress manager, WordPress management, site management, control multiple sites, WordPress management dashboard, administration, automate, automatic, comments, clone, dashboard, duplicate, google analytics, login, manage, managewp, multiple, multisite, remote, seo, spam
 Requires at least: 3.1
 Tested up to: 6.8
-Stable tag: 4.9.31
+Stable tag: 4.9.32
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/quick-guide-gplv3.html
 
@@ -55,6 +55,15 @@ Check out the [ManageWP promo video](https://vimeo.com/220647227).
 https://vimeo.com/220647227
 
 == Changelog ==
+
+= 4.9.32 =
+- Security: Fixed Stored Cross-Site Scripting vulnerability (CVE-2026-3718)
+- Security: Added input sanitization for communication headers before database storage
+- Security: Enhanced output escaping on connection management page
+- Security: Fixed path traversal vulnerability in File Manager download action
+- Security: Fixed SQL injection vulnerability in incremental backup table checksum action
+- Security: Fixed XSS vulnerability in brand contact support dialog
+- Security: Enhanced output escaping for error messages and public keys on connection management page
 
 = 4.9.31 =
 - Added Elementor Pro database update detection
