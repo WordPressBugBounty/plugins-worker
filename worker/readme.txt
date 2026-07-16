@@ -2,8 +2,8 @@
 Contributors: managewp,freediver
 Tags: manage multiple sites, backup, security, migrate, performance, analytics, Manage WordPress, Managed WordPress, WordPress management, WordPress manager, WordPress management, site management, control multiple sites, WordPress management dashboard, administration, automate, automatic, comments, clone, dashboard, duplicate, google analytics, login, manage, managewp, multiple, multisite, remote, seo, spam
 Requires at least: 3.1
-Tested up to: 6.9
-Stable tag: 4.9.34
+Tested up to: 7.0
+Stable tag: 4.9.35
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/quick-guide-gplv3.html
 
@@ -55,6 +55,10 @@ Check out the [ManageWP promo video](https://vimeo.com/220647227).
 https://vimeo.com/220647227
 
 == Changelog ==
+
+= 4.9.35 =
+- WordPress 7.0 compatibility bump
+- Fix: Resolved PHP 8.x deprecation warnings in action method signatures
 
 = 4.9.34 =
 - Fix: Resolved PHP 8.4 deprecation warnings for implicit nullable type declarations

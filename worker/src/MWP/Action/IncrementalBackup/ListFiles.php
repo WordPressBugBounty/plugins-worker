@@ -28,7 +28,7 @@ class MWP_Action_IncrementalBackup_ListFiles extends MWP_Action_IncrementalBacku
      *
      * @return array
      */
-    public function queryFiles(array $params = array(), MWP_Worker_Request $request)
+    public function queryFiles(array $params, MWP_Worker_Request $request)
     {
         if (isset($params['query']) && is_array($params['query'])) {
             $files = $this->getFilesInfo($params['query']);
@@ -49,7 +49,7 @@ class MWP_Action_IncrementalBackup_ListFiles extends MWP_Action_IncrementalBacku
      *
      * @return array
      */
-    public function listDirectories(array $params = array(), MWP_Worker_Request $request)
+    public function listDirectories(array $params, MWP_Worker_Request $request)
     {
         $directories = $params['directories'];
 

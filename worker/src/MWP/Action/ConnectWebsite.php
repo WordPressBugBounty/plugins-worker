@@ -11,7 +11,7 @@
 class MWP_Action_ConnectWebsite extends MWP_Action_Abstract
 {
 
-    public function execute(array $params = array(), MWP_Worker_Request $request)
+    public function execute(array $params, MWP_Worker_Request $request)
     {
         if (empty($params['public_key'])) {
             throw new MWP_Worker_Exception(MWP_Worker_Exception::CONNECTION_PUBLIC_KEY_NOT_PROVIDED);

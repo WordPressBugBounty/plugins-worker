@@ -11,7 +11,7 @@
 class MWP_Action_IncrementalBackup_ListTables extends MWP_Action_IncrementalBackup_Abstract
 {
 
-    public function listTables(array $params = array(), MWP_Worker_Request $request)
+    public function listTables(array $params, MWP_Worker_Request $request)
     {
         $wpdb   = $this->container->getWordPressContext()->getDb();
         $db     = $this->container->getWordPressContext()->getConstant('DB_NAME');
