@@ -11,6 +11,11 @@
 class MWP_EventListener_PublicRequest_AutomaticLogin implements Symfony_EventDispatcher_EventSubscriberInterface
 {
 
+    /**
+     * Expected format of the auto-login message_id (nonce), matching the value the dashboard issues.
+     */
+    const MESSAGE_ID_PATTERN = '/^[0-9a-f]{38}_[0-9]{9,12}$/';
+
     private $context;
 
     private $signer;
@@ -98,10 +103,19 @@ class MWP_EventListener_PublicRequest_AutomaticLogin implements Symfony_EventDis
 
         $messageId = $request->query['message_id'];
 
+        // Reject any message_id that is not in the exact format issued by the dashboard.
+        if (!preg_match(self::MESSAGE_ID_PATTERN, $messageId)) {
+            /** @handled function */
+            load_plugin_textdomain('worker');
+            $this->context->wpDie(esc_html__("The automatic login token is invalid. Please try again, or, if this keeps happening, contact support.", 'worker'), '', 200);
+
+            return;
+        }
+
         $currentUser = $this->context->getCurrentUser();
 
         $adminUri    = rtrim($this->context->getAdminUrl(''), '/').'/'.$where;
-        $redirectUri = $this->modifyUriParameters($adminUri, $request->query, array('signature', 'username', 'auto_login', 'message_id', 'mwp_goto', 'mwpredirect', 'auto_login_fixed', 'service_sign', 'service_key', 'site_id'));
+        $redirectUri = $this->modifyUriParameters($adminUri, $request->query, array('signature', 'username', 'auto_login', 'message_id', 'mwp_goto', 'mwpredirect', 'auto_login_fixed', 'service_sign', 'service_sign_v2', 'service_sign_v2_algo', 'service_key', 'site_id'));
 
         if ($currentUser->user_login === $username) {
             try {
