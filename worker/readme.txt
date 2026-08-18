@@ -3,7 +3,7 @@ Contributors: managewp,freediver
 Tags: manage multiple sites, backup, security, migrate, performance, analytics, Manage WordPress, Managed WordPress, WordPress management, WordPress manager, WordPress management, site management, control multiple sites, WordPress management dashboard, administration, automate, automatic, comments, clone, dashboard, duplicate, google analytics, login, manage, managewp, multiple, multisite, remote, seo, spam
 Requires at least: 3.1
 Tested up to: 7.0
-Stable tag: 4.9.36
+Stable tag: 4.9.37
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/quick-guide-gplv3.html
 
@@ -55,6 +55,9 @@ Check out the [ManageWP promo video](https://vimeo.com/220647227).
 https://vimeo.com/220647227
 
 == Changelog ==
+
+= 4.9.37 =
+- Security: The automatic (1-click) login signature now binds the target account, so a login link authorises a session only for the intended user.
 
 = 4.9.36 =
 - Security: Hardened the automatic (1-click) login handler against reuse of a captured login URL by strictly validating the login token format.
